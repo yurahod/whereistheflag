@@ -90,6 +90,8 @@ def send_start(message):
     if (msg):
         print('Бот: %s'%msg.text)
 
+# UD{GIt_c0mmit_REALLY}
+
 # Обработчик всех сообщений
 @bot.message_handler(func = lambda message: True)
 def answer_to_user(message):
