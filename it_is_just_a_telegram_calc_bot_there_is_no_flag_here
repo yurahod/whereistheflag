@@ -13,7 +13,7 @@ WITH_ICON = 'https://raw.githubusercontent.com/6eremotuk01/Calculator-bot/master
 START_MESSAGE = """Отправь мне выражение, а я тебе скажу ответ)"""
 # Сообщение поддержки
 HELP_MESSAGE = """Мной пользоваться очень просто. Вы мне отправляете выражение, а я вам возвращаю его результат.
-#NONONONONO
+
 ***Операторы***:
     + - сложение;
     - - вычитание;
