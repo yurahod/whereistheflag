@@ -1,0 +1,41 @@
+ Sample Perl Scripts
+
+For those of you who are interested in learning some real basics of perl, the following sample scripts that I wrote are particularly interesting from the viewpoint of learning perl. You may want to cut & paste some part of these scripts for inclusion in your own perl script -- this is what I often do. Note that these scripts are to show how to use some of the basic components of Perl; they do NOT represent good programming style!
+
+    compavg.pl
+
+    This is a simple script that computes the average of each column in a table of data. It shows one common usage : read in the data and split each line directly to "words" and store these words in an array.
+
+    docsubset.pl
+
+    This script extracts a subset of docs from a database. The target doc id is specified in a separate file. It shows you how to use the associative array (hash table) to store the target IDs. It also shows you a common way of detecting the beginning and end of a document through pattern matching.
+
+    do.pl
+
+    This is like the "for" or "foreach" loop in a shell script, but it allows you to do some command with different numerical parameter values specified in a file. It shows you how you can dynamically generate a command string and execute it with shell. In general, you can run any command by calling a system function.
+
+    replace.pl
+
+    This script does "string replacement" on the standard input. You specify the rules for translation in a file. The script would load the rules and store them in a hash table, and then replace any matched strings in the standard input.
+
+    It shows you how to handle arguments including "-help". It's also a good example of how to iteration over all the entries in a hash table.
+
+    lemursrcfmt.pl
+
+    This is a relatively complex script, which formats any documents of the TREC format (thus any TREC documents, including the Web data) and converts them to the basic Lemur format. It also does some tokenization, such as lower all the cases, removing non-digit-alphabet symbols, etc. Plus, you can control if you want to ignore some tagged fields.
+
+    The most interesting part of this script is where it parses a stream of text using just one pattern matching statement:
+
+      while (/(<\/[^>]+>)|(<[^>]+>)|([^><]+)/go) {
+                $closeTag=$1;
+                $beginTag=$2;
+    	    $content=$3;
+        ....
+
+    This is a *very* powerful method! There are 3 patterns specified with a logic OR operator, so the condition would be true as long as one of them is matched. The option "go" means global and optimal. Optimal is solely for efficiency, but global allows us to apply this pattern to the *whole* string to be matched. Every time, one of the three patterns would be matched, and we use other variables such as "$closeTag" to obtain the matched value. We can then test which of the three is non-empty to decide what token we actually have matched.
+
+    These should be enough for you to start taking advantage of the power of perl! Believe me, you'll save more time in the long run, if you spend some time to learn it now, as it would help you do many tasks much more quickly...
+
+    I think a good and fun way of learning it is to first read about some basics; there are a lot of good online tutorials. Then, start *modifying* some existing examples such as what I've listed here, or any other simple perl code examples, to see what's going to happen; again, there are many sample perl scripts on the Web. Of course, let me know if you run into any trouble or have any questions. I'd be happy to provide you with a sketch of the scripts if you tell me what kind of task you would like to do; you can then try to figure out how to get the details working. 
+
+Email me (ChengXiang Zhai, czhai AT cs.uiuc.edu) if you have any questions about these scripts. 
