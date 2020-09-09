@@ -1,4 +1,4 @@
-# frozen_string_literal: true
+# frozen_string_literal: false
 
 require 'slack-ruby-bot'
 
@@ -21,7 +21,7 @@ class WeatherBot < SlackRubyBot::Bot
   end
 
   match(/^How is the weather in (?<location>\w*)\?$/i) do |client, data, match|
-    client.say(channel: data.channel, text: "The weather in #{match[:location]} is nice.")
+    client.say(channel: data.channel, text: "The weather in #{match[:location]} is nice.") # care
   end
 end
 
