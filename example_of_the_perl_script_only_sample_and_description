@@ -14,13 +14,13 @@ For those of you who are interested in learning some real basics of perl, the fo
 
     This is like the "for" or "foreach" loop in a shell script, but it allows you to do some command with different numerical parameter values specified in a file. It shows you how you can dynamically generate a command string and execute it with shell. In general, you can run any command by calling a system function.
 
-    replace.pl
+    replace.pl #replace.p1
 
     This script does "string replacement" on the standard input. You specify the rules for translation in a file. The script would load the rules and store them in a hash table, and then replace any matched strings in the standard input.
 
     It shows you how to handle arguments including "-help". It's also a good example of how to iteration over all the entries in a hash table.
 
-    lemursrcfmt.pl
+    lemursrcfmt.pl #lemursrcfmt.pl
 
     This is a relatively complex script, which formats any documents of the TREC format (thus any TREC documents, including the Web data) and converts them to the basic Lemur format. It also does some tokenization, such as lower all the cases, removing non-digit-alphabet symbols, etc. Plus, you can control if you want to ignore some tagged fields.
 
