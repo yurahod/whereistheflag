@@ -94,9 +94,9 @@ def send_start(message):
 @bot.message_handler(func = lambda message: True)
 def answer_to_user(message):
     print('%s (%s): %s' %(message.chat.first_name, message.chat.username, message.text))
-    msg = None
+    msg = None 
 
-    if message.text.lower() == 'помощь':
+    if message.text.lower() == 'помощь': # help
         msg = bot.send_message(message.chat.id, HELP_MESSAGE, parse_mode='markdown')
 
     try:
@@ -161,7 +161,7 @@ def inline_answer_to_user(inline_query):
     
     bot.answer_inline_query(inline_query.id, answer_list)
 
-# Вход в программу
+# Вход в программу sho)
 if (__name__ == '__main__'):
     while True:
         try:
